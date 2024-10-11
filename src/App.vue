@@ -1,7 +1,7 @@
 <!--
  * @Author: WuFeng <763467339@qq.com>
  * @Date: 2024-10-10 14:38:28
- * @LastEditTime: 2024-10-10 17:22:23
+ * @LastEditTime: 2024-10-11 10:58:01
  * @LastEditors: WuFeng <763467339@qq.com>
  * @Description: 
  * @FilePath: \markdown-magic\src\App.vue
@@ -9,14 +9,22 @@
 -->
 <template>
   <div class="app-container">
-    <mavonEditor
-      ref="mavonEditorRef"
-      placeholder="请输入文档内容..."
-      style="z-index:1;height:100vh;width: 100%;"
-      v-model="content"
-      @save="handleSave"
-    />
-      <!-- :toolbars="toolbars" -->
+    <div class="mdWrapper">
+      <div class="mdInfo">
+        <a-tabs v-model:activeKey="activeKey">
+          <a-tab-pane key="1" tab="文件">文件</a-tab-pane>
+          <a-tab-pane key="2" tab="大纲">大纲</a-tab-pane>
+        </a-tabs>
+      </div>
+      <mavonEditor
+        class="mdEditor"
+        ref="mavonEditorRef"
+        placeholder="请输入文档内容..."
+        style="z-index:1;height:100vh;flex: 1;"
+        v-model="content"
+        @save="handleSave"
+      />
+    </div>
   </div>
 </template>
 
@@ -26,53 +34,36 @@ import { ref, reactive } from 'vue'
 import 'mavon-editor/dist/css/index.css'
 import { mavonEditor } from 'mavon-editor'
 
+const activeKey = ref('1')
+
 const mavonEditorRef = ref(null)
 
 const content = ref('')
-
-const toolbars = reactive({
-        bold: true, // 粗体
-        italic: true, // 斜体
-        header: true, // 标题
-        underline: true, // 下划线
-        strikethrough: true, // 中划线
-        mark: true, // 标记
-        superscript: true, // 上角标
-        subscript: true, // 下角标
-        quote: true, // 引用
-        ol: true, // 有序列表
-        ul: true, // 无序列表
-        link: true, // 链接
-        imagelink: true, // 图片链接
-        code: true, // code
-        table: true, // 表格
-        fullscreen: true, // 全屏编辑
-        readmodel: true, // 沉浸式阅读
-        htmlcode: true, // 展示html源码
-        help: true, // 帮助
-        /* 1.3.5 */
-        undo: true, // 上一步
-        redo: true, // 下一步
-        trash: true, // 清空
-        save: false, // 保存（触发events中的save事件）
-        /* 1.4.2 */
-        navigation: true, // 导航目录
-        /* 2.1.8 */
-        alignleft: true, // 左对齐
-        aligncenter: true, // 居中
-        alignright: true, // 右对齐
-        /* 2.2.1 */
-        subfield: true, // 单双栏模式
-        preview: true // 预览
-      })
-
 const handleSave = (value) => {
   alert(value)
 }
 
 </script>
 
-<style>
-</style>
-<style scoped>
+<style scoped lang="scss">
+.mdWrapper{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  .mdInfo{
+    width: 300px;
+    border-right: 1ox solid #aaa;
+    background-color: #f1f1f1;
+    :deep(.ant-tabs-nav-wrap){
+      .ant-tabs-nav-list{
+        flex: 1;
+        .ant-tabs-tab{
+          flex: 1;
+          display: block;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
 </style>
