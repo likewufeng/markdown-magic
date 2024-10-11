@@ -10,13 +10,16 @@
     "tauri": "tauri"
   },
   "dependencies": {
-    "vue": "^3.3.4",
     "@tauri-apps/api": ">=2.0.0",
-    "@tauri-apps/plugin-shell": ">=2.0.0"
+    "@tauri-apps/plugin-shell": ">=2.0.0",
+    "mavon-editor": "3.0.1",
+    "vue": "^3.3.4"
   },
   "devDependencies": {
+    "@tauri-apps/cli": ">=2.0.0",
     "@vitejs/plugin-vue": "^5.0.5",
-    "vite": "^5.3.1",
-    "@tauri-apps/cli": ">=2.0.0"
+    "sass": "^1.79.4",
+    "sass-loader": "^16.0.2",
+    "vite": "^5.3.1"
   }
 }
