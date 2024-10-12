@@ -1,14 +1,32 @@
+<!--
+ * @Author: WuFeng <763467339@qq.com>
+ * @Date: 2024-10-10 14:38:28
+ * @LastEditTime: 2024-10-12 16:07:28
+ * @LastEditors: WuFeng <763467339@qq.com>
+ * @Description: 
+ * @FilePath: \markdown-magic\index.html
+ * Copyright 版权声明
+-->
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tauri + Vue 3 App</title>
-  </head>
 
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tauri + Vue 3 App</title>
+  <script>
+    // 禁用全局右键菜单
+    document.addEventListener('contextmenu', function (event) {
+      event.preventDefault(); // 阻止默认的右键菜单
+      // 可以在这里添加自定义逻辑，例如显示自定义右键菜单
+    });
+  </script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>

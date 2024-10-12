@@ -12,10 +12,13 @@
   "dependencies": {
     "@ant-design/icons-vue": "^7.0.1",
     "@tauri-apps/api": ">=2.0.0",
+    "@tauri-apps/plugin-dialog": "~2",
+    "@tauri-apps/plugin-fs": "~2",
     "@tauri-apps/plugin-shell": ">=2.0.0",
     "ant-design-vue": "^4.0.0-rc.6",
     "mavon-editor": "3.0.1",
-    "vue": "^3.3.4"
+    "vue": "^3.3.4",
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@tauri-apps/cli": ">=2.0.0",

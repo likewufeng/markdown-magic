@@ -10,7 +10,11 @@ import '@/styles/index.scss'
 import 'mavon-editor/dist/css/index.css'
 import mavonEditor from 'mavon-editor'
 
+// Vuex
+import store from './store'
+
 createApp(App)
   .use(Antd)
+  .use(store)
   .component('mavon-editor',mavonEditor)
-  .mount("#app");
+  .mount("#app", true);
